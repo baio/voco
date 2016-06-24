@@ -29,6 +29,8 @@ const barrels: string[] = [
 
   // Thirdparty barrels.
   'rxjs',
+  '@ngrx/core',
+  '@ngrx/store',
 
   // App specific barrels.
   'app',
@@ -37,6 +39,7 @@ const barrels: string[] = [
   'app/spiderchart',
   'app/spider-chart',
   'app/bar-chart',
+  'app/input-box',
   /** @cli-barrel */
 ];
 
