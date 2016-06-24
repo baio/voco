@@ -26,7 +26,7 @@ export const sentenceReducer: ActionReducer<SentenceState> = (state: SentenceSta
                 }
             });
             return {
-                sentence: state.sentence,
+                sentence: sentence,
                 words : hash
             };
         }

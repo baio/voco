@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -8,6 +8,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class InputBoxComponent  {
 
+  @Input() value: string;
   @Output() changed = new EventEmitter<string>();
 
   onChanged(val : string) {

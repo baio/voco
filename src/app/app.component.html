@@ -9,7 +9,10 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <voco-input-box (changed)="onInputBoxChanged($event)"></voco-input-box>
+      <voco-input-box
+        [value]="sentence$ | async"
+        (changed)="onInputBoxChanged($event)">
+      </voco-input-box>
     </div>
   </div>
 </div>

@@ -29,6 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private sub: ISubscription;
   private input$ = new Subject<string>();
   data$: Observable<ChartData>;
+  sentence$: Observable<string>;
 
   constructor(private store: Store<AppState>) {
 
@@ -42,12 +43,15 @@ export class AppComponent implements OnInit, OnDestroy {
           { tick : "Vocal", value : m.count.vocals }
         ]
       }))
-    }))
+    }));
+
+    this.sentence$ = store.select(p => p.sentence).map(m => m.sentence);
+
   }
 
   ngOnInit() {
 
-    this.sub = this.input$.asObservable().share().debounceTime(500).distinctUntilChanged().subscribe(sentence => {
+    this.sub = this.input$.asObservable().debounceTime(500).distinctUntilChanged().subscribe(sentence => {
       this.store.dispatch({type : APP_SENTENCE_CHANGED, payload: <AppSentenceChangedPayload>{ sentence } })
     });
 
