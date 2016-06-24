@@ -50,6 +50,11 @@ export class AppComponent implements OnInit, OnDestroy {
     this.sub = this.input$.asObservable().share().debounceTime(500).distinctUntilChanged().subscribe(sentence => {
       this.store.dispatch({type : APP_SENTENCE_CHANGED, payload: <AppSentenceChangedPayload>{ sentence } })
     });
+
+    this.store.dispatch({type : APP_SENTENCE_CHANGED,
+      payload: <AppSentenceChangedPayload>{ sentence : "POCKING A DEAD RACCOON IS NOT RESEARCH" }
+    })
+
   }
 
   ngOnDestroy() {

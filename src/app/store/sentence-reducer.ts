@@ -8,7 +8,7 @@ const defaultState: SentenceState = {
 };
 
 const isVowel = (c: string): boolean =>
-    ['a', 'e', 'i', 'o', 'u'].some(s => s === c);
+    ['a', 'e', 'i', 'o', 'u'].some(s => s === c.toLowerCase());
 
 export const sentenceReducer: ActionReducer<SentenceState> = (state: SentenceState = defaultState, action: Action) => {
 
