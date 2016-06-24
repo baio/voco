@@ -15,6 +15,7 @@ export class BarChartComponent {
 
   @Input() set data(val: ChartData) {
       this.htData = !val ? null : {
+        title: { text : val.title },
         chart: {
             type: "column"
         },
@@ -26,8 +27,7 @@ export class BarChartComponent {
         },
         yAxis: {
             title: {
-                text: "Number of",
-                style: {}
+                text: "Number of"
             }
         },
         series: val.series.map(m => ({
@@ -36,4 +36,5 @@ export class BarChartComponent {
         }))
     };
   }
+
 }
