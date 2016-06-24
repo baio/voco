@@ -1,5 +1,7 @@
 # Voco
 
+[On the wild](https://baio.github.io/voco/)
+
 Know how often you use vowels in your writings, how it is proportional to cosonants.
 Just type something and be aware.
 
@@ -16,3 +18,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng github-pages:deploy` to deploy to Github Pages.
 
+### Other projects
+
+See other projects :
++ https://github.com/baio
++ https://bitbucket.org/baio/

@@ -17,9 +17,9 @@ module.exports = function(defaults) {
       'rxjs/**/*.+(js|js.map)',
       '@angular/**/*.+(js|js.map)',
       '@ngrx/**/*.+(js|js.map)',
-      'highcharts/**/*.+(js|css)',
-      'bootstrap/**/*.+(css)',
-      'underscore/underscore.js'
+      'highcharts/highcharts.js',
+      'highcharts/highcharts-more.js',
+      'bootstrap/dist/css/bootstrap.min.css'
     ]
   });
 };
