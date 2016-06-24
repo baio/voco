@@ -2,7 +2,7 @@
 
 [On the wild](https://baio.github.io/voco/)
 
-Know how often you use vowels in your writings, how it is proportional to cosonants.
+Know how often you use vowels in your writings, how it is proportional to consonants.
 Just type something and be aware.
 
 ## Development server
