@@ -33,6 +33,10 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/highchart',
+  'app/spiderchart',
+  'app/spider-chart',
+  'app/bar-chart',
   /** @cli-barrel */
 ];
 
@@ -49,6 +53,7 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    '@ngrx': 'vendor/@ngrx',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages
