@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <voco-bar-chart [data]="data$ | async"></voco-bar-chart>
+    </div>
+    <div class="col-md-6">
+      <voco-spider-chart [data]="data$ | async"></voco-spider-chart>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <voco-input-box
+        [value]="sentence$ | async"
+        (changed)="onInputBoxChanged($event)">
+      </voco-input-box>
+    </div>
+  </div>
+  <div class="row">
+    <blockquote>
+      <p>
+        Know how often you use vowels in your writings, how it is proportional to cosonants.
+      </p>
+    </blockquote>
+  </div>
+</div>
