@@ -1,6 +1,7 @@
 # Voco
 
-[On the wild](https://baio.github.io/voco/)
+~~[On the wild](https://baio.github.io/voco/)~~
+Not working, bug in ng-cli, dosen't copy highcharts to vendors in prod mode.
 
 Know how often you use vowels in your writings, how it is proportional to consonants.
 Just type something and be aware.
