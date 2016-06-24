@@ -25,6 +25,10 @@ export const sentenceReducer: ActionReducer<SentenceState> = (state: SentenceSta
                     count : { vocals, consonants }
                 }
             });
+            return {
+                sentence: state.sentence,
+                words : hash
+            };
         }
         default:
             return state;

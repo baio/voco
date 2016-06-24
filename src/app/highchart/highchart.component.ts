@@ -22,20 +22,7 @@ const STATIC_OPTS = {
     plotOptions: {
         series: {
             animation: true
-        },
-        heatmap: {
-            borderWidth: 2,
-            borderColor: "#FFF",
-            dataLabels: {
-                style: {
-                    textShadow: "none"
-                }
-            }
-        },
-        pie: {
-            borderWidth: 2
-        },
-
+        }
     },
     credits: {
         enabled: false
@@ -48,8 +35,7 @@ declare var Highcharts: any;
 @Component({
     moduleId: module.id,
     selector: 'voco-highchart',
-    templateUrl: 'highchart.component.html',
-    styleUrls: ['highchart.component.css']
+    template: ''
 })
 export class HighchartComponent implements OnChanges, OnDestroy {
 
