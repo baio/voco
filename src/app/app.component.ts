@@ -39,7 +39,7 @@ export class AppComponent implements OnInit, OnDestroy {
         name: m.word,
         items : [
           { tick : "Consonant", value : m.count.consonants },
-          { tick : "Vocals", value : m.count.vocals }
+          { tick : "Vocal", value : m.count.vocals }
         ]
       }))
     }))

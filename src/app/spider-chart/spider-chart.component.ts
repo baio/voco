@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { HighchartComponent } from '../highchart';
 import { ChartData } from '../shared/';
 
+
 @Component({
   moduleId: module.id,
   selector: 'voco-spider-chart',
@@ -14,26 +15,30 @@ export class SpiderChartComponent {
   htData: any;
 
   @Input() set data(val: ChartData) {
-    let cat = (val.series || [])[0];
+
+    let getTickValues = (tick: string) =>
+      val.series
+      .map(m => m.items.filter(f => f.tick === tick).map(m => m.value))
+      .reduce((a, b) => {
+        return [...a, ...b]
+      }, []);
+
     this.htData = !val ? null : {
       chart: {
         polar: true,
         type: "line"
       },
-      title: { text: val.title },
-      xAxis: {
-        title: {
+      title: {
           text: "Vowels / Consonants"
-        },
-        categories : cat ? cat.items.map(m => m.tick) : [],
+      },
+      xAxis: {
+        title: null,
+        categories : val.series.map(m => m.name),
         tickmarkPlacement: "on",
-        lineWidth: 0,
-        type: "category"
+        lineWidth: 0
       },
       yAxis: {
-        title: {
-            text: "Number of"
-        },
+        title: null,
         gridLineInterpolation: "polygon"
       },
       tooltip: {
@@ -45,20 +50,24 @@ export class SpiderChartComponent {
           animation: true
         }
       },
-      legend: {
-        align: 'right',
-        verticalAlign: 'top',
-        y: 70,
-        layout: 'vertical'
-      },
-      series: val.series.map(m => ({
-          name : m.name,
-          data : m.items.map(m => m.value),
+      series: [
+        {
+          name : 'Vocal',
+          data : getTickValues('Vocal'),
           pointPlacement: 'on'
-      })),
+        },
+        {
+          name : 'Consonant',
+          data : getTickValues('Consonant'),
+          pointPlacement: 'on'
+        },
+      ],
       credits: {
         enabled: false
+      },
+      legend: {
       }
     };
+
   }
 }
