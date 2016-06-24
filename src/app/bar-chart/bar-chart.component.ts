@@ -11,14 +11,10 @@ import { ChartData } from '../shared/';
 })
 export class BarChartComponent {
 
-  @Input() data: ChartData;
+  htData: any;
 
-  //map external data to highchart data
-  get htData() : any {
-
-      console.log("---", this.data);
-
-    return !this.data ? null : {
+  @Input() set data(val: ChartData) {
+      this.htData = !val ? null : {
         chart: {
             type: "column"
         },
@@ -34,11 +30,10 @@ export class BarChartComponent {
                 style: {}
             }
         },
-        series: this.data.series.map(m => ({
+        series: val.series.map(m => ({
           name : m.name,
           data : m.items.map(m => [m.tick, m.value])
         }))
     };
   }
-
 }

@@ -47,18 +47,16 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.sub = this.input$.asObservable().share().debounceTime(1000).distinctUntilChanged().subscribe(sentence =>
+    this.sub = this.input$.asObservable().share().debounceTime(500).distinctUntilChanged().subscribe(sentence => {
       this.store.dispatch({type : APP_SENTENCE_CHANGED, payload: <AppSentenceChangedPayload>{ sentence } })
-    );
+    });
   }
 
   ngOnDestroy() {
-
     this.sub.unsubscribe();
   }
 
   onInputBoxChanged(sentence: string) {
-    console.log("+++");
     this.input$.next(sentence);
   }
 
